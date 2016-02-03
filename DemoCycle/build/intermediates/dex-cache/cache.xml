@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/infoetu/poulinl/TPAndroids/DemoCycle/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="/home/infoetu/poulinl/TPAndroids/DemoCycle/app/build/intermediates/pre-dexed/debug/internal_impl-23.1.1-ba53f7aa4ebde418112b2b4bf5f1c325c34947e7.jar" />
+    </item>
+    <item
+        jar="/home/infoetu/poulinl/TPAndroids/DemoCycle/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="/home/infoetu/poulinl/TPAndroids/DemoCycle/app/build/intermediates/pre-dexed/debug/classes-8b1c34b334891ac76e233e11d1a68d0b787e73d1.jar" />
+    </item>
+    <item
+        jar="/usr/local/android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="/home/infoetu/poulinl/TPAndroids/DemoCycle/app/build/intermediates/pre-dexed/debug/support-annotations-23.1.1-cc50292982a37cec52007d6b413fde3efe77776d.jar" />
+    </item>
+    <item
+        jar="/home/infoetu/poulinl/TPAndroids/DemoCycle/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="/home/infoetu/poulinl/TPAndroids/DemoCycle/app/build/intermediates/pre-dexed/debug/classes-5eaf7f890e263c687f42719cf8248f57e5920641.jar" />
+    </item>
+
+</items>

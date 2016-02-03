@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DemoCycle</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="number_hint">Entrez un nombre</string>
+</resources>
