@@ -41,8 +41,10 @@ public class Modele{
     }
 
     public boolean setStudent(int i,int e){
-        if(tablets[i] != 0){
-            return false;
+        for(int j = 0; j < tabletsArr.length ; j++){
+            if(tablets[i] == e){
+                return false;
+            }
         }
         tablets[i] = e;
         return true;
