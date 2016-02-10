@@ -3,6 +3,8 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="stu">Etudiants</string>
+    <string name="term">Terminal</string>
 
     <string-array name="tablets">
         <item>tablette 01</item>
