@@ -2,11 +2,16 @@ package ovh.poulin.tab;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -16,14 +21,12 @@ public class TabEtu extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tab_etu);
-        final Spinner spTerminal = ( Spinner ) findViewById (R.id.terminal);
-        final Spinner spStudent = ( Spinner ) findViewById (R.id.student);
-        ArrayAdapter adTerminal = ArrayAdapter . createFromResource ( this, R.array.tablets ,android.R.layout.simple_spinner_item ) ;
-        ArrayAdapter adStudent = ArrayAdapter . createFromResource ( this, R.array.students ,android.R.layout.simple_spinner_item ) ;
+        final ListView lvTerminal = ( ListView ) findViewById (R.id.list);
+        ListAdapter adTerminal = new myAdapter();
         AdapterView.OnItemSelectedListener listener = new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                setDescText(spTerminal, spStudent);
+               // setDescText(spTerminal, spStudent);
             }
 
             @Override
@@ -31,11 +34,46 @@ public class TabEtu extends Activity {
 
             }
         };
-        spTerminal.setOnItemSelectedListener(listener);
-        spStudent.setOnItemSelectedListener(listener);
-        spTerminal.setAdapter(adTerminal) ;
-        spStudent.setAdapter(adStudent) ;
+        lvTerminal.setOnItemSelectedListener(listener);
+        lvTerminal.setAdapter(adTerminal) ;
     }
+
+    class myAdapter extends BaseAdapter implements ListAdapter {
+
+        @Override
+        public int getCount() {
+            return getResources().getStringArray(R.array.tablets).length;
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return getResources().getStringArray(R.array.tablets)[position];
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            // TODO Auto-generated method stub
+
+            LayoutInflater inflater=(LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+
+            convertView=inflater.inflate(R.layout.list_row,parent,false);
+
+            Spinner spinner=(Spinner) convertView.findViewById(R.id.spinner1);
+            TextView tvTab=(TextView) convertView.findViewById(R.id.value);
+            tvTab.setText(getResources().getStringArray(R.array.tablets)[position]);
+
+            ArrayAdapter adStudent = ArrayAdapter . createFromResource ( getApplicationContext(), R.array.students ,android.R.layout.simple_spinner_item ) ;
+            adStudent.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinner.setAdapter(adStudent);
+            return convertView;
+        }
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -59,9 +97,9 @@ public class TabEtu extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void setDescText(Spinner term, Spinner stu){
+    /*public void setDescText(Spinner term, Spinner stu){
         TextView tvDesc;
         tvDesc = (TextView) findViewById(R.id.description);
         tvDesc.setText(term.getSelectedItem().toString() + "  ->  " +stu.getSelectedItem().toString());
-    }
+    }*/
 }
